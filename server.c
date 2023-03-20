@@ -30,7 +30,7 @@ int main (int argc, char** argv) {
     bind(server_socket, (struct sockaddr*) &server_address, sizeof(server_address));
     listen(server_socket, 5);
     while(1) {
-      usleep(250 * 1000);
+      sleep(300);
       int client_socket = accept(server_socket, NULL, NULL);
       send(client_socket, server_greeting, sizeof(server_greeting), 0);
       close(client_socket);
